@@ -3,6 +3,6 @@ import { Link } from "react-router-dom";
 
 export const UserLink = ({user}) => {
     return (
-        <Link to={"/user/" + user?.id}>{user?.fullname}</Link>
+        <ProxyLink to={"/user/" + user?.id}>{user?.fullname}</ProxyLink>
     )
 }

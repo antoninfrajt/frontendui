@@ -6,6 +6,8 @@ import {
   import { SearchPage } from "./Pages/SearchPage";
   import { EventPage } from "./Pages/EventPage";
   import { EventEditPage } from "./Pages/EventEditPage";
+  import { FacilityPage } from "./Pages/FacilityPage";
+import { FacilityEditPage } from "./Pages/FacilityEditPage copy";
   // import { UserPage, GroupPage } from "./Pages";
   
   export const Routes = [
@@ -22,6 +24,16 @@ import {
       {
           path: "/event/view/:id",
           element: <EventPage />,
+          errorElement: <SearchPage />,
+      },
+      {
+          path: "/facilities/facility/view/:id",
+          element: <FacilityPage />,
+          errorElement: <SearchPage />,
+      },
+      {
+          path: "/facilities/facility/edit/:id",
+          element: <FacilityEditPage />,
           errorElement: <SearchPage />,
       },
       {
@@ -46,7 +58,7 @@ import {
       },    
   ]
   
-  const router = createBrowserRouter(Routes, {basename: "/ug"});
+  const router = createBrowserRouter(Routes);
   // const router = createBrowserRouter(Routes);
   
   export const AppRouter = () => <RouterProvider router={router} />

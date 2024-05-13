@@ -15,10 +15,10 @@ export const EventPage = ()  => {
     if (event) {
         return (
              // <UserLargeCard user={user} />
-            //  <div>Události nahrány
-            //     {JSON.stringify(event)}
-            //  </div>
-            <EventLargeCard event={event} />
+             <div>Události nahrány
+                {JSON.stringify(event)}
+             </div>
+            // <EventLargeCard event={event} />
         )
     } else {
         return (

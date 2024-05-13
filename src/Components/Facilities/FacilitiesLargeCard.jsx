@@ -1,25 +1,22 @@
 import { CardCapsule } from '@hrbolek/uoisfrontend-shared/src'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { EventMediumCard } from './EventMediumCard'
+import { FacilitiesMediumCard } from './FacilitiesMediumCard'
+
 // import { UserRolesCard } from './UserRolesCard'
 // import { UserRawCard } from './UserRawCard'
 // import { UserMediumCard } from './UserMediumCard'
 
-export const EventLargeCard = ({event, children}) => {
+export const FacilitiesLargeCard = ({facility, children}) => {
     return (
-        <CardCapsule title={"Udalost " + event?.name}>
+        <CardCapsule title={"Zázemí " + facility?.name}>
         <Row>
             <Col md={3}>
                 {/* <UserMediumCard user={user}/> */}
-                <EventMediumCard event={event}/>
+                <FacilitiesMediumCard facility={facility}/>
             </Col>
-            <Col md={6}>
+            <Col md={9}>
                 {children}
-            </Col>
-            <Col md={3}>
-                {/* <UserRolesCard user={user}/> */}
-                <EventMediumCard event={event}/>
             </Col>
             
         </Row>
@@ -27,7 +24,7 @@ export const EventLargeCard = ({event, children}) => {
         <Row>
             <Col>
                 {/* <UserRawCard user={user}/> */}
-                {JSON.stringify(event)}
+                {JSON.stringify(facility)}
             </Col>
         </Row>
     </CardCapsule>

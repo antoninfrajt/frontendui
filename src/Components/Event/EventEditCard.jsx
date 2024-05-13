@@ -2,7 +2,8 @@
 import { CardCapsule, EditableAttributeText} from '@hrbolek/uoisfrontend-shared/src'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { UpdateEventAsyncAction} from '../../Queries/UpdateEventAsyncAction'
+import { UpdateEventAsyncAction } from '../../Queries/UpdateEventAsyncAction copy'
+
 
 export const EventEditCard = ({event}) => {
     return (
