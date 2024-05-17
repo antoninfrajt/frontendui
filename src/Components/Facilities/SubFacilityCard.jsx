@@ -2,18 +2,20 @@
 import { CardCapsule } from '@hrbolek/uoisfrontend-shared/src'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { FacilitiesLink } from './FacilitiesLink'
 
 
-const Subfacility = ({subfacility}) => {
+const Subfacility = ({index, subfacility}) => {
     return (
-        <Row>
+        <tr>
             {/* <Col>
             {/* <Link to= {"/facilities/facility/"}>{subfacility?.name}</Link> */}
             {/* </Col>  */}
-            <Col md = {2} >{subfacility.name}</Col>
-            <Col md = {3}>{subfacility.id}</Col>
-            <Col md = {1}>{subfacility.label}</Col>
-        </Row>
+            <td>{index}</td>
+            <td><FacilitiesLink facility ={subfacility}></FacilitiesLink></td>
+            <td>{subfacility.id}</td>
+            <td>{subfacility.label}</td>
+        </tr>
     )
 }
 
@@ -25,11 +27,28 @@ export const SubFacilityCard = ({facility, valid=true}) => {
 
     return (
         <CardCapsule title={"Podřadná zázemí " + facility?.name}>
-        <Col>
+            <table className='table'>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Název</th>
+                        <th>Id</th>
+                        <th>Označení</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {filtered.map(
+                        (s,i) => <Subfacility index={i+1} key={s.id} subfacility={s} />
+                    )}  
+                    
+                </tbody>
+            </table>
+
+        {/* <Col>
             {filtered.map(
-                s => <Subfacility key={s.id} subfacility={s} />
+                (i,s) => <Subfacility index={i+1} key={s.id} subfacility={s} />
             )}
-        </Col>
+        </Col> */}
     </CardCapsule>
         // <Row>
         //     <Col>

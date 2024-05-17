@@ -3,6 +3,8 @@ import { CardCapsule } from '@hrbolek/uoisfrontend-shared/src'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { SubFacilityCard } from './SubFacilityCard'
+import { FacilitiesLink } from './FacilitiesLink'
+import { ShowDate } from '../Special Formats/ShowDate'
 
 
 export const FacilitiesMediumCard = ({facility}) => {
@@ -39,11 +41,11 @@ export const FacilitiesMediumCard = ({facility}) => {
             </Row>
             <Row>
                 <Col>Nadřazené zázemí</Col>
-                <Col>{facility?.masterFacility}</Col>
+                <Col><FacilitiesLink facility={facility?.masterFacility}></FacilitiesLink></Col>
             </Row>
             <Row>
                 <Col>Naposledy změněno</Col>
-                <Col>{facility?.lastchange}</Col>
+                <Col>{ShowDate(facility?.lastchange)}</Col>   
             </Row>
             <Row>
                 <Col>Typ</Col>
@@ -51,7 +53,7 @@ export const FacilitiesMediumCard = ({facility}) => {
             </Row>
             <Row>
                 <Col>Skupina</Col>
-                <Col>{facility?.group.name}</Col>
+                <Col>{facility?.group?.name}</Col>
             </Row>
         </CardCapsule>
     )
