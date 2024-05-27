@@ -3,6 +3,7 @@ import { CardCapsule } from '@hrbolek/uoisfrontend-shared/src'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { FacilitiesLink } from './FacilitiesLink'
+import { FacilitiesCreateLink } from './FacilitiesCreateLink'
 
 
 const Subfacility = ({index, subfacility}) => {
@@ -40,7 +41,9 @@ export const SubFacilityCard = ({facility, valid=true}) => {
                     {filtered.map(
                         (s,i) => <Subfacility index={i+1} key={s.id} subfacility={s} />
                     )}  
-                    
+                    <tr>
+                        <td><FacilitiesCreateLink></FacilitiesCreateLink></td>
+                    </tr>
                 </tbody>
             </table>
 
