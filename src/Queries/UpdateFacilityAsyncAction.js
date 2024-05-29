@@ -1,8 +1,8 @@
 import {CreateAsyncActionFromMutation } from "@hrbolek/uoisfrontend-shared/src"
 
 const mutation = `
-    mutation($id: UUID!, $lastchange: DateTime!, $name: String, $address: String, $nameEn: String, $label: String, $geolocation: String, $geometry: String, $capacity: Int, $TypeId: UUID, $GroupId: UUID){ 
-        result: facilityUpdate(facility: {id: $id, lastchange: $lastchange, name: $name, address: $address, nameEn: $nameEn, label: $label, geolocation: $geolocation, geometry: $geometry, capacity: $capacity, facilitytypeId: $TypeId, groupId: $GroupId})
+    mutation($id: UUID!, $lastchange: DateTime!, $name: String, $address: String, $nameEn: String, $label: String, $geolocation: String, $geometry: String, $capacity: Int, $TypeId: UUID, $GroupId: UUID, $MasterId: UUID){ 
+        result: facilityUpdate(facility: {id: $id, lastchange: $lastchange, name: $name, address: $address, nameEn: $nameEn, label: $label, geolocation: $geolocation, geometry: $geometry, capacity: $capacity, facilitytypeId: $TypeId, groupId: $GroupId, masterFacilityId: $MasterId})
             {
             id
             msg
@@ -23,6 +23,15 @@ const mutation = `
                 group{
                     id
                     name
+                }
+                masterFacility {
+                    id
+                    name
+                    label
+                    type{
+                        id
+                        name
+                    }
                 }
             }
         }

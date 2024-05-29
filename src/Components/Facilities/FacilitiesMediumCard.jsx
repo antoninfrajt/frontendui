@@ -49,7 +49,7 @@ export const FacilitiesMediumCard = ({facility}) => {
             </Row>
             <Row>
                 <Col>Typ</Col>
-                <Col>{facility?.type.name}</Col>
+                <Col>{facility?.type?.name}</Col>
             </Row>
             <Row>
                 <Col>Skupina</Col>
