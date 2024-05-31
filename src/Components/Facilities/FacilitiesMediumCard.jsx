@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col'
 import { SubFacilityCard } from './SubFacilityCard'
 import { FacilitiesLink } from './FacilitiesLink'
 import { ShowDate } from '../Special Formats/ShowDate'
+import { GroupLink } from '../Group'
 
 
 export const FacilitiesMediumCard = ({facility}) => {
@@ -53,7 +54,7 @@ export const FacilitiesMediumCard = ({facility}) => {
             </Row>
             <Row>
                 <Col>Skupina</Col>
-                <Col>{facility?.group?.name}</Col>
+                <Col><GroupLink group = {facility?.group}/></Col>
             </Row>
         </CardCapsule>
     )

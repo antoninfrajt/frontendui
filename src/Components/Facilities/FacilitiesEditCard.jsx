@@ -79,6 +79,9 @@ export const FacilitiesEditCard = ({facility}) => {
                 <SearchInput title = "Nadfacility" onSelect={MasterFacilitySelect} FetchByPatternAsyncAction={FetchSearchFacilityAsyncAction}/>
                 </Col>
             </Row>
+            <Row>
+                <SubFacilityCard facility={facility} edit= {true}/>
+            </Row>
             
         </CardCapsule>
     )

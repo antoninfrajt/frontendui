@@ -26,7 +26,11 @@ const query = `query ($id: UUID!) {
         id
         name
         label
+        lastchange
         valid
+        masterFacility {
+          id
+        }
       }
       group {
         id

@@ -4,9 +4,9 @@ import { ProxyLink } from "@hrbolek/uoisfrontend-shared/src/Components/ProxyLink
 export const FacilitiesLink = ({facility, menu = false}) => {
     if (menu) {
         return(
-            <Dropdown>
+            <Dropdown className="d-inline mx-2" autoClose="outside" size="sm">
                 {"Zázemí " + facility?.name}
-                <Dropdown.Toggle>
+                <Dropdown.Toggle split variant='secondary-outline' id="dropdown-basic" size="sm">
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     <Dropdown.Item as ={"div"}><ProxyLink to ={"/facilities/facility/view/" + facility?.id}>View</ProxyLink></Dropdown.Item>
