@@ -37,6 +37,11 @@ import { FacilityEditPage } from "./Pages/FacilityEditPage";
           errorElement: <SearchPage />,
       },
       {
+          path: "/facilities/facilities/edit/:id",
+          element: <FacilityEditPage/>,
+          errorElement: <SearchPage />,
+      },
+      {
           path: "/user/:id",
           element: <UserPage />,
           errorElement: <SearchPage />,
