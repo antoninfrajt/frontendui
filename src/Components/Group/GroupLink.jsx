@@ -6,7 +6,7 @@ import { Col } from "react-bootstrap";
 export const GroupLink = ({group}) => {
     if (group != null) {
         return(
-            <ProxyLink to ={"/group/" + group?.id}>{group?.name}</ProxyLink>
+            <ProxyLink to ={"/ug/group/view" + group?.id}>{group?.name}</ProxyLink>
         )
     }
     else {
