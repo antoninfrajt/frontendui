@@ -1,7 +1,7 @@
 import { Col, Dropdown } from "react-bootstrap"
 import { ProxyLink } from "@hrbolek/uoisfrontend-shared/src/Components/ProxyLink.jsx"
 
-export const FacilitiesLink = ({facility, menu = false}) => {
+export const FacilityLink = ({facility, menu = false}) => {
     if (menu) {
         return(
             <Dropdown className="d-inline mx-2" autoClose="outside" size="sm">

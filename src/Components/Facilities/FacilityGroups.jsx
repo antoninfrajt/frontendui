@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch} from '@hrbolek/uoisfrontend-shared/src'
 import { FetchAllGroupsAsyncAction} from '../../Queries/FetchAllGroupsAsyncAction'
-export const FacilitiesGroups = () => {
+export const FacilityGroups = () => {
     const [groups, setGroups] = useState([])
     const dispatch = useDispatch()
     useEffect(

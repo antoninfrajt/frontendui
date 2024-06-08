@@ -1,20 +1,20 @@
 import { CardCapsule } from '@hrbolek/uoisfrontend-shared/src'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { FacilitiesMediumCard } from './FacilitiesMediumCard'
-import { FacilitiesLink } from './FacilitiesLink'
+import { FacilityMediumCard } from './FacilityMediumCard'
+import { FacilityLink } from './FacilityLink'
 
 // import { UserRolesCard } from './UserRolesCard'
 // import { UserRawCard } from './UserRawCard'
 // import { UserMediumCard } from './UserMediumCard'
 
-export const FacilitiesLargeCard = ({facility, children}) => {
+export const FacilityLargeCard = ({facility, children}) => {
     return (
-        <CardCapsule title={<div><FacilitiesLink facility={facility} menu = {true}></FacilitiesLink></div>}>
+        <CardCapsule title={<div><FacilityLink facility={facility} menu = {true}></FacilityLink></div>}>
         <Row>
             <Col md={3}>
                 {/* <UserMediumCard user={user}/> */}
-                <FacilitiesMediumCard facility={facility}/>
+                <FacilityMediumCard facility={facility}/>
             </Col>
             <Col md={9}>
                 {children}

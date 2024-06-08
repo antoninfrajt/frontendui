@@ -7,7 +7,7 @@ import {
   import { EventPage } from "./Pages/EventPage";
   import { EventEditPage } from "./Pages/EventEditPage";
   import { FacilityPage } from "./Pages/FacilityPage";
-import { FacilityEditPage } from "./Pages/FacilityEditPage copy";
+import { FacilityEditPage } from "./Pages/FacilityEditPage";
   // import { UserPage, GroupPage } from "./Pages";
   
   export const Routes = [

@@ -5,8 +5,8 @@ import { useFreshItem, CreateAsyncQueryValidator, useDispatch } from "@hrbolek/u
 import { FetchEventByIdAsyncAction } from "../Queries/FetchEventByIdAsynsAction"
 import { EventLargeCard } from "../Components/Event/EventLargeCard"
 import { FetchFacilityByIdAsyncAction } from "../Queries/FetchFacilityByIdAsynsAction"
-import { FacilitiesLargeCard } from "../Components/Facilities/FacilitiesLargeCard"
-import { FacilitiesEditCard } from "../Components/Facilities/FacilitiesEditCard"
+import { FacilityLargeCard } from "../Components/Facilities/FacilityLargeCard"
+import { FacilityEditCard } from "../Components/Facilities/FacilityEditCard"
 
 const validator = CreateAsyncQueryValidator({error: "Nepovedlo se načíst budovu", success: "Načtení budovy se povedlo"})
 export const FacilityEditPage = ()  => {
@@ -21,9 +21,9 @@ export const FacilityEditPage = ()  => {
             // <div>Události nahrány
             //     {JSON.stringify(facility)}
             // </div>
-            <FacilitiesLargeCard facility={facility}>
-                <FacilitiesEditCard facility ={facility}/>
-            </FacilitiesLargeCard>
+            <FacilityLargeCard facility={facility}>
+                <FacilityEditCard facility ={facility}/>
+            </FacilityLargeCard>
 
         )
     } else {

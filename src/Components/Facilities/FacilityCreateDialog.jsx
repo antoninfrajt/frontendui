@@ -9,7 +9,7 @@ import { UpdateFacilityAsyncAction } from "../../Queries/UpdateFacilityAsyncActi
 import { TextInput } from "@hrbolek/uoisfrontend-shared/src"
 import { InsertFacilityAsyncAction } from "../../Queries/InsertFacilityAsyncAction"
 import { FetchFacilityByIdAsyncAction } from "../../Queries/FetchFacilityByIdAsynsAction"
-export const FacilitiesCreateDialog = ({facility}) => {
+export const FacilityCreateDialog = ({facility}) => {
     const dispatch = useDispatch()
     const [data, setData] = useState({
         name: null,

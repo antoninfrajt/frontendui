@@ -7,10 +7,11 @@ import { SubFacilityCard } from './SubFacilityCard'
 import { useEffect, useState } from 'react'
 import { FetchAllTypesAsyncAction} from '../../Queries/FetchAllTypesAsyncAction'
 import { FetchAllFacilitiesAsyncAction } from '../../Queries/FetchAllFacilitiesAsyncAction'
-import { FacilitiesGroups } from './FacilitiesGroups'
+import { FacilityGroups } from './FacilityGroups'
 import { FetchSearchFacilityAsyncAction } from '../../Queries/FetchSearchFacilityAsyncAction'
 import { SearchInput } from '@hrbolek/uoisfrontend-shared/src/Components/SearchInput'
-export const FacilitiesEditCard = ({facility}) => {
+import { SubFacilityCardEdit } from './SubFacilityCardEdit'
+export const FacilityEditCard = ({facility}) => {
     const [types, setTypes] = useState([])
     const dispatch = useDispatch()
     useEffect(
@@ -26,7 +27,7 @@ export const FacilitiesEditCard = ({facility}) => {
             func()
         }, [FetchAllTypesAsyncAction, dispatch,]
     )
-    const groups = FacilitiesGroups()
+    const groups = FacilityGroups()
     const facility_ = {...facility,TypeId: facility?.type?.id,GroupId: facility?.group?.id}
     const MasterFacilitySelect = (value) => {
         console.log(value)
@@ -80,7 +81,7 @@ export const FacilitiesEditCard = ({facility}) => {
                 </Col>
             </Row>
             <Row>
-                <SubFacilityCard facility={facility} edit= {true}/>
+                <SubFacilityCardEdit facility={facility}/>
             </Row>
             
         </CardCapsule>
