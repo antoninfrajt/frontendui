@@ -46,12 +46,20 @@ export const FacilityCreateDialog = ({facility}) => {
         return(
             <Dialog title= "Nové zázemí" onOk= {onOk} onCancel= {onCancel}>
                 <Row>
-                <Col><TextInput onChange={onChange("name")}/></Col>   
+                    <Col>
+                        <div className="form-floating">
+                            <TextInput  onChange={onChange("name")}/>
+                            <label>Jméno*</label>
+                        </div>
+                    </Col>   
                 </Row>
                 <Row>
                 <Col>
-                <SearchInput title = "Nadfacility" onSelect={MasterFacilitySelect} FetchByPatternAsyncAction={FetchSearchFacilityAsyncAction}/>
+                <SearchInput label = "Nadřazené zázemí*" onSelect={MasterFacilitySelect} FetchByPatternAsyncAction={FetchSearchFacilityAsyncAction}/>
                 </Col>
+                </Row>
+                <Row>
+                    <Col>* - povinné údaje</Col>
                 </Row>
             </Dialog>
          )
