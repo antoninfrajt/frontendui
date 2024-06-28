@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { FacilityMediumCard } from './FacilityMediumCard'
 import { FacilityLink } from './FacilityLink'
+import { SubFacilityCardEdit } from './SubFacilityCardEdit'
 
 // import { UserRolesCard } from './UserRolesCard'
 // import { UserRawCard } from './UserRawCard'

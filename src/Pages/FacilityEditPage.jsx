@@ -7,6 +7,7 @@ import { EventLargeCard } from "../Components/Event/EventLargeCard"
 import { FetchFacilityByIdAsyncAction } from "../Queries/FetchFacilityByIdAsynsAction"
 import { FacilityLargeCard } from "../Components/Facilities/FacilityLargeCard"
 import { FacilityEditCard } from "../Components/Facilities/FacilityEditCard"
+import { SubFacilityCardEdit } from "../Components/Facilities/SubFacilityCardEdit"
 
 const validator = CreateAsyncQueryValidator({error: "Nepovedlo se načíst budovu", success: "Načtení budovy se povedlo"})
 export const FacilityEditPage = ()  => {
@@ -23,6 +24,7 @@ export const FacilityEditPage = ()  => {
             // </div>
             <FacilityLargeCard facility={facility}>
                 <FacilityEditCard facility ={facility}/>
+                <SubFacilityCardEdit facility={facility}/>
             </FacilityLargeCard>
 
         )

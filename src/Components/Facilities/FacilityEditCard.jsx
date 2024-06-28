@@ -34,7 +34,7 @@ export const FacilityEditCard = ({facility}) => {
         dispatch(UpdateFacilityAsyncAction({id: facility.id, MasterId: value, lastchange: facility.lastchange}))
     }
     return (
-        <CardCapsule title={"Událost - atributy " + facility?.name}>
+        <CardCapsule title={"Zázemí " + facility?.name + " - atributy"}>
             
             <Row>
                 <Col><EditableAttributeText item= {facility} attributeName= "name" label= "Název" asyncUpdater= {UpdateFacilityAsyncAction}/></Col>    
@@ -77,13 +77,9 @@ export const FacilityEditCard = ({facility}) => {
             </Row>
             <Row>
                 <Col>
-                <SearchInput title = "Nadfacility" onSelect={MasterFacilitySelect} FetchByPatternAsyncAction={FetchSearchFacilityAsyncAction}/>
+                <SearchInput label = "Nadřazené zázemí" onSelect={MasterFacilitySelect} FetchByPatternAsyncAction={FetchSearchFacilityAsyncAction}/>
                 </Col>
-            </Row>
-            <Row>
-                <SubFacilityCardEdit facility={facility}/>
-            </Row>
-            
+            </Row>    
         </CardCapsule>
     )
 }

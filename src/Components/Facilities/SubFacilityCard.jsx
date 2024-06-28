@@ -23,7 +23,7 @@ export const SubFacilityCard = ({facility, valid=true}) => {
         s => s?.valid == valid
     )
     return (
-        <CardCapsule title={"Podřadná zázemí " + facility?.name}>
+        <CardCapsule title={"Podřazená zázemí " + facility?.name}>
             <table className='table'>
                 <thead>
                     <tr>

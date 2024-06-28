@@ -5,7 +5,8 @@ export const FacilityLink = ({facility, menu = false}) => {
     if (menu) {
         return(
             <Dropdown className="d-inline mx-2" autoClose="outside" size="sm">
-                {"Zázemí " + facility?.name}
+                <ProxyLink to ={"/facilities/facility/view/" + facility?.id}>{"Zázemí " + facility?.name}</ProxyLink>
+                {/* {"Zázemí " + facility?.name} */}
                 <Dropdown.Toggle split variant='secondary-outline' id="dropdown-basic" size="sm">
                 </Dropdown.Toggle>
                 <Dropdown.Menu>

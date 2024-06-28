@@ -40,7 +40,7 @@ export const SubFacilityCardEdit = ({facility, valid=true}) => {
         s => s?.valid == valid
     )
     return (
-        <CardCapsule title={"Podřadná zázemí " + facility?.name}>
+        <CardCapsule title={"Podřazená zázemí " + facility?.name}>
             <table className='table'>
                 <thead>
                     <tr>
@@ -60,18 +60,6 @@ export const SubFacilityCardEdit = ({facility, valid=true}) => {
 
                 </tbody>
             </table>
-
-        {/* <Col>
-            {filtered.map(
-                (i,s) => <Subfacility index={i+1} key={s.id} subfacility={s} />
-            )}
-        </Col> */}
-    </CardCapsule>
-    // <Row>
-    //     <Col>
-    //         {/* <UserRawCard user={user}/> */}
-    //         {JSON.stringify(filtered)}
-    //     </Col>
-    // </Row>
+        </CardCapsule>
     )
 }

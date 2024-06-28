@@ -10,7 +10,7 @@ import { GroupLink } from '../Group'
 
 export const FacilityMediumCard = ({facility}) => {
     return (
-        <CardCapsule title={"Zázemí - atributy " + facility?.name}>
+        <CardCapsule title={"Zázemí " + facility?.name + " - atributy"}>
             
             <Row>
                 <Col>Název</Col>
