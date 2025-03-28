@@ -1,3 +1,4 @@
+export const FetchAllSubjectsAsyncAction()
 query MyQuery {
     subjectPage {
       __typename
