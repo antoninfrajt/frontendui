@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+// import FetchAllSubjectsAsyncAction from '@jokachu/uoisfrontend-subject'
 import { AppCanvas, createAsyncGraphQLAction, useAsyncAction } from '@hrbolek/uoisfrontend-gql-shared'
 // import { AppRouter } from './AppRouter';
 const Name = ({name}) => {
@@ -17,15 +17,15 @@ const Envelope = ({title , children}) => {
         <div className="card" color = "blue" >{children}</div>
     )
 }
-const fetchUserAction = createAsyncGraphQLAction(`{
-        userPage {
-        id
-        name
-        surname
-        }
-    }`)
-const FirstEntity = () => {
-    const {loading, error, entity, dispatchResult} = useAsyncAction({fetchUserAction});
+const fetchUserAction = createAsyncGraphQLAction(`{userPage {
+    __typename
+    id
+    fullname
+    typeId
+    lastchange
+  }}`)
+export const FirstEntity = () => {
+    const {loading, error, entity, dispatchResult} = useAsyncAction(fetchUserAction, {});
     if (loading) return <p>Loading...</p>;
     return <div>User: <div>{JSON.stringify({dispatchResult})}</div></div>;
 }
