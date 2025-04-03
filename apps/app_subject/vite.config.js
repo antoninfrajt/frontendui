@@ -44,6 +44,7 @@ export default defineConfig({
       "@hrbolek/uoisfrontend-shared": path.resolve(__dirname, "../../packages/shared/src"),
       "@hrbolek/uoisfrontend-gql-shared": path.resolve(__dirname, "../../packages/gql_shared/src"),
       "@hrbolek/uoisfrontend-ug": path.resolve(__dirname, "../../packages/ug/src"),
+      "@hrbolek/uoisfrontend-ug2": path.resolve(__dirname, "../../packages/ug2/src"),
       "@hrbolek/uoisfrontend-granting": path.resolve(__dirname, "../../packages/granting/src"),
       "@hrbolek/uoisfrontend-admissions": path.resolve(__dirname, "../../packages/admissions/src"),
       "@hrbolek/uoisfrontend-requests": path.resolve(__dirname, "../../packages/requests/src"),
