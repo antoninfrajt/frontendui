@@ -4,8 +4,9 @@ import { useParams } from "react-router"
 import { CreateDelayer, ErrorHandler, LoadingSpinner } from "@hrbolek/uoisfrontend-shared"
 import { useAsyncAction } from "@hrbolek/uoisfrontend-gql-shared"
 import { SubjectLargeCard } from "../Components"
-import { SubjectReadAsyncAction } from "../Queries"
+import { SubjectReadAsyncAction, SubjectReadPageAsyncAction } from "../Queries"
 import { SubjectPageNavbar } from "./SubjectPageNavbar"
+import { FetchAllSubjectsAsyncAction } from "../../Subject_for_del/Queries/FetchAllSubjectsAsyncAction"
 
 /**
  * A page content component for displaying detailed information about an subject entity.
@@ -59,7 +60,7 @@ const SubjectPageContent = ({subject}) => {
  * <SubjectPageContentLazy subject={subjectId} />
  */
 const SubjectPageContentLazy = ({subject}) => {
-    const { error, loading, entity, fetch } = useAsyncAction(SubjectReadAsyncAction, subject)
+    const { error, loading, entity, fetch } = useAsyncAction(SubjectReadPageAsyncAction, subject)
     const [delayer] = useState(() => CreateDelayer())
 
     const handleChange = async(e) => {
@@ -101,5 +102,6 @@ const SubjectPageContentLazy = ({subject}) => {
 export const SubjectPage = () => {
     const {id} = useParams()
     const subject = {id}
-    return <SubjectPageContentLazy subject={subject} />
+    // return <div>Hello world {id}</div>
+    return <SubjectPageContentLazy subject = {subject} />
 }

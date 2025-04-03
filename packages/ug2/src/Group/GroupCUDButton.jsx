@@ -124,7 +124,7 @@ export const GroupButton = ({ operation, children, group, onDone = () => {}, ...
 };
 
 // Prop validation using PropTypes
-GroupCUDButton.propTypes = {
+GroupCUDButton.PropTypes = {
     /** The operation to perform: "C" for create, "U" for update, "D" for delete. */
     operation: PropTypes.oneOf(['C', 'U', 'D']).isRequired,
     /** The label or content for the button. */

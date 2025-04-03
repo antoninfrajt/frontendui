@@ -1,5 +1,6 @@
-export const FetchAllSubjectsAsyncAction()
-query MyQuery {
+import { createAsyncGraphQLAction } from "@hrbolek/uoisfrontend-gql-shared"
+
+const query =`{
     subjectPage {
       __typename
       name
@@ -12,5 +13,6 @@ query MyQuery {
         email
         created
       }
-    }
-  }
+}}`
+
+export const FetchAllSubjectsAsyncAction = createAsyncGraphQLAction(query)

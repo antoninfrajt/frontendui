@@ -4,7 +4,6 @@ export * from './GroupMediumCard'
 export * from './GroupLink'
 export * from './GroupLargeCard'
 
-export * from './GroupCUDButton'
 
 export * from './Scalars'
 export * from './Vectors'

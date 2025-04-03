@@ -4,9 +4,11 @@ import {
 } from "react-router-dom";
   
 import { UserRouterSegment } from "@hrbolek/uoisfrontend-ug2";
+import { SubjectRouterSegment } from "../../../packages/subject/src";
 
 export const Routes = [
-    UserRouterSegment
+    // UserRouterSegment,
+    SubjectRouterSegment
 ]
 
 // const router = createBrowserRouter(Routes, {basename: "/ug"});
