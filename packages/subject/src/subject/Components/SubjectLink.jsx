@@ -1,6 +1,6 @@
 import { ProxyLink } from "@hrbolek/uoisfrontend-shared"
 
-export const SubjectURI = '/subject/subject/view/';
+export const SubjectURI = 'subject/subject/view';
 
 /**
  * A React component that renders a `ProxyLink` to an "subject" entity's view page.
