@@ -1,40 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { AppCanvas } from '@hrbolek/uoisfrontend-gql-shared';
 
-import { AppCanvas, createAsyncGraphQLAction, useAsyncAction } from '@hrbolek/uoisfrontend-gql-shared'
-// import { AppRouter } from './AppRouter';
-const Name = ({name}) => {
-    return (
-        <span>Name: {name}</span>
-    )
-}
-const User = ({name, surname, children}) => {
-    return (
-        <div>{name} {surname}<br/>{children}</div>
-    )
-}
-const Envelope = ({title , children}) => {
-    return (
-        <div className="card" color = "blue" >{children}</div>
-    )
-}
-const fetchUserAction = createAsyncGraphQLAction(`{
-        userPage {
-        id
-        name
-        surname
-        }
-    }`)
-const FirstEntity = () => {
-    const {loading, error, entity, dispatchResult} = useAsyncAction({fetchUserAction});
-    if (loading) return <p>Loading...</p>;
-    return <div>User: <div>{JSON.stringify({dispatchResult})}</div></div>;
-}
+import { AppCanvas } from '@hrbolek/uoisfrontend-gql-shared'
+import { AppRouter } from './AppRouter';
 
 export const App = () => {
     return (
-        // <Container fluid>
         <AppCanvas>
-            <FirstEntity/>
             {/* <Navbar className='bg-light'>
                 <Container>
                     <Navbar.Brand href="" className="justify-content-start"><a href='/' className='btn'>UOIS</a></Navbar.Brand>
@@ -44,15 +16,9 @@ export const App = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar> */}
-            Hello World
-            <Envelope>
-                <User name = "Bobr" surname="Newbie">
-                    <Name name = "Luke"/>
-                </User>
-            </Envelope>
-            {/* <AppRouter /> */}
+            
+            <AppRouter />
         </AppCanvas>    
-        // {/* </Container> */}
     )
 }
 
