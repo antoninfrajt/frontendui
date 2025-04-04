@@ -16,6 +16,7 @@ export const SubjectMediumFragment = createQueryStrLazy(
 `
 fragment SubjectMedium on SubjectGQLModel {
   ...SubjectLink
+  description
 }
 `, SubjectLinkFragment)
 
@@ -23,6 +24,7 @@ export const SubjectLargeFragment = createQueryStrLazy(
 `
 fragment SubjectLarge on SubjectGQLModel {
   ...SubjectMedium
+  
 }
 `, SubjectMediumFragment)
   

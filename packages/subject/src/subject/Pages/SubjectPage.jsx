@@ -60,7 +60,7 @@ const SubjectPageContent = ({subject}) => {
  * <SubjectPageContentLazy subject={subjectId} />
  */
 const SubjectPageContentLazy = ({subject}) => {
-    const { error, loading, entity, fetch } = useAsyncAction(FetchAllSubjectsAsyncAction, subject)
+    const { error, loading, entity, fetch } = useAsyncAction(SubjectReadPageAsyncAction, subject)
     const [delayer] = useState(() => CreateDelayer())
 
     const handleChange = async(e) => {

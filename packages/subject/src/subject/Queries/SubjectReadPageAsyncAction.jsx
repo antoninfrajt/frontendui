@@ -3,7 +3,7 @@ import { SubjectLargeFragment } from "./SubjectFragments";
 
 const SubjectReadPageQuery = createQueryStrLazy(
 `
-query SubjectReadPageQuery($skip: Int, $limit: Int, $where: SubjectWhereInputFilter) {
+query SubjectReadPageQuery($skip: Int, $limit: Int, $where: SubjectInputFilter) {
   result: subjectPage(skip: $skip, limit: $limit, where: $where) {
     ...SubjectLarge
   }
