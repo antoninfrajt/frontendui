@@ -17,6 +17,17 @@ export const SubjectMediumFragment = createQueryStrLazy(
 fragment SubjectMedium on SubjectGQLModel {
   ...SubjectLink
   description
+  guarantors {
+        name
+        email
+        created
+  }
+  program {
+    __typename
+    id 
+    lastchange
+    name
+  }
 }
 `, SubjectLinkFragment)
 

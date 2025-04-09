@@ -1,3 +1,6 @@
+import { LeftColumn, MiddleColumn } from "@hrbolek/uoisfrontend-shared"
+import { Row,Col } from "react-bootstrap"
+
 /**
  * A component that displays medium-level content for an subject entity.
  *
@@ -26,6 +29,10 @@ export const SubjectMediumContent = ({subject, children}) => {
         <>
             SubjectMediumContent <br />
             {JSON.stringify(subject)}
+            <Row>
+                <Col>Název</Col>
+                <Col>{subject?.name}</Col>
+            </Row>
             {children}
         </>
     )

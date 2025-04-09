@@ -8,7 +8,7 @@ import { SubjectRouterSegment } from "../../../packages/subject/src";
 import { HelloPage } from "../../../packages/subject/src/Subject_for_del/Pages/HelloPage";
 
 export const Routes = [
-    // UserRouterSegment,
+    UserRouterSegment,
     SubjectRouterSegment,
     {
         path: `/hello/world`,
@@ -16,7 +16,7 @@ export const Routes = [
     }
 
 ]
-console.log (Routes[0].path)
+
 
 // const router = createBrowserRouter(Routes, {basename: "/ug"});
 const router = createBrowserRouter(Routes);
