@@ -24,16 +24,38 @@ import { Row,Col } from "react-bootstrap"
  *   <p>Additional information about the entity.</p>
  * </SubjectMediumContent>
  */
+
 export const SubjectMediumContent = ({subject, children}) => {
     return (
         <>
             SubjectMediumContent <br />
             {JSON.stringify(subject)}
             <Row>
-                <Col>Název</Col>
+                <Col>Název:</Col>
                 <Col>{subject?.name}</Col>
+            </Row>
+            <Row>
+                <Col>Anglický název:</Col>
+                <Col>{subject?.nameEn}</Col>
+            </Row>
+            <Row>
+                <Col>Popis předmětu:</Col>
+                <Col>{subject?.description}</Col>
+            </Row>
+            <Row>
+                <Col>ID:</Col>
+                <Col>{subject?.id}</Col>
+            </Row>
+            <Row>
+                <Col>Poslední změna:</Col>
+                <Col>{subject?.lastchange}</Col>
+            </Row>
+            <Row>
+                <Col>Kontaktní email:</Col>
+                <Col>{subject?.email}</Col>
             </Row>
             {children}
         </>
     )
 }
+
