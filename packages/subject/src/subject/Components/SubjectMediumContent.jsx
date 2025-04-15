@@ -28,8 +28,7 @@ import { Row,Col } from "react-bootstrap"
 export const SubjectMediumContent = ({subject, children}) => {
     return (
         <>
-            SubjectMediumContent <br />
-            {JSON.stringify(subject)}
+            
             <Row>
                 <Col>Název:</Col>
                 <Col>{subject?.name}</Col>
@@ -55,6 +54,7 @@ export const SubjectMediumContent = ({subject, children}) => {
                 <Col>{subject?.email}</Col>
             </Row>
             {children}
+
         </>
     )
 }
