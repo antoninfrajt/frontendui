@@ -49,10 +49,6 @@ export const SubjectMediumContent = ({subject, children}) => {
                 <Col>Poslední změna:</Col>
                 <Col>{subject?.lastchange}</Col>
             </Row>
-            <Row>
-                <Col>Kontaktní email:</Col>
-                <Col>{subject?.email}</Col>
-            </Row>
             {children}
 
         </>
