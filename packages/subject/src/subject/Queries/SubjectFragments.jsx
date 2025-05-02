@@ -35,7 +35,18 @@ export const SubjectLargeFragment = createQueryStrLazy(
 `
 fragment SubjectLarge on SubjectGQLModel {
   ...SubjectMedium
-  
+  semesters {
+    __typename
+    id
+    lastchange
+    mandatory
+    topics {
+      __typename
+      id
+      order
+      name
+    }
+  }
 }
 `, SubjectMediumFragment)
   

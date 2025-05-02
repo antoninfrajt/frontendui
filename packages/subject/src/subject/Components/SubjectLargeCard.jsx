@@ -2,6 +2,7 @@ import Row from "react-bootstrap/Row"
 import { LeftColumn, MiddleColumn } from "@hrbolek/uoisfrontend-shared"
 import { SubjectCardCapsule } from "./SubjectCardCapsule"
 import { SubjectMediumCard } from "./SubjectMediumCard"
+import { SubjectVectorsAttribute } from "../Vectors"
 
 /**
  * A large card component for displaying detailed content and layout for an subject entity.
@@ -27,7 +28,9 @@ import { SubjectMediumCard } from "./SubjectMediumCard"
  *   <p>Additional content for the middle column.</p>
  * </SubjectLargeCard>
  */
+
 export const SubjectLargeCard = ({subject, children}) => {
+    const semesters = subject?.semesters || []
     return (
         <SubjectCardCapsule subject={subject} >
             <Row>

@@ -1,5 +1,7 @@
 import { createAsyncGraphQLAction, processVectorAttributeFromGraphQLResult } from "@hrbolek/uoisfrontend-gql-shared"
 import { InfiniteScroll } from "@hrbolek/uoisfrontend-shared"
+import { Col, Row } from "react-bootstrap"
+import { Map } from "react-bootstrap-icons"
 
 /**
  * A component for displaying the `vectors` attribute of an subject entity.
@@ -27,17 +29,24 @@ import { InfiniteScroll } from "@hrbolek/uoisfrontend-shared"
  *
  * <SubjectVectorsAttribute subject={subjectEntity} />
  */
+const VectorMediumCard = ({vector}) =>
+    <>
+        <Row>
+            Jmeno:{vector.lastchange}
+        </Row>   
+        <Row>
+            Id:{vector.id}
+        </Row>
+    </>
 export const SubjectVectorsAttribute = ({subject}) => {
-    const { vectors } = subject
-    if (typeof vectors === 'undefined') return null
+    console.log(subject)
+    const {semesters} = subject
+    console.log(semesters)
+    console.log(typeof semesters)
+    if (typeof semesters == 'undefined') return null
     return (
         <>
-            {vectors.map(
-                vector => <div vector={item.id}>
-                    Probably {'<VectorMediumCard vector=\{vector\} />'} <br />
-                    {JSON.stringify(vector)}
-                </div>
-            )}
+            {semesters.map(semester => <VectorMediumCard vector = {semester} key = {semester.id}/>)}
         </>
     )
 }

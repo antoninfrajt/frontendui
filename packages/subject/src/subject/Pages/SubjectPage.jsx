@@ -7,6 +7,8 @@ import { SubjectLargeCard } from "../Components"
 import { SubjectReadAsyncAction, SubjectReadPageAsyncAction } from "../Queries"
 import { SubjectPageNavbar } from "./SubjectPageNavbar"
 import { FetchAllSubjectsAsyncAction } from "../../Subject_for_del/Queries/FetchAllSubjectsAsyncAction"
+import { SubjectVectorsAttribute } from "../Vectors"
+import { SubjectSemestersAttribute } from "../Vectors/subjectsemestersAttribute"
 
 /**
  * A page content component for displaying detailed information about an subject entity.
@@ -28,11 +30,19 @@ import { FetchAllSubjectsAsyncAction } from "../../Subject_for_del/Queries/Fetch
  * 
  * <SubjectPageContent subject={subjectEntity} />
  */
+const subjectEntity = { 
+    vectors: [
+        { id: 1, name: "semester" }, 
+        { id: 2, name: "Vector Item 2" }
+    ] 
+};
 const SubjectPageContent = ({subject}) => {
+    const semesters = {semesters:subject?.semesters || []}
     return (<>
         <SubjectPageNavbar subject={subject} />
         <SubjectLargeCard subject={subject}>
-            Subject {JSON.stringify(subject)}
+            <SubjectSemestersAttribute subject={semesters}>
+            </SubjectSemestersAttribute>
         </SubjectLargeCard>
     </>)
 }
