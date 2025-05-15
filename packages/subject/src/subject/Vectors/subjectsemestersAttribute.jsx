@@ -36,13 +36,20 @@ const SemesterMediumCard = ({semester}) => {
     return (
         <> 
             <Row>
-                Id:{semester.id}
+                Id: 
+                {semester.id}
             </Row>
             <Row>
-                Poslední změna:{semester.lastchange}
-            </Row> 
+                Název: 
+                {semester.name}
+            </Row>
             <Row>
-                Témata:<br/><SubjectTopicsAttribute subject= {topics}/>
+                Poslední změna: 
+                {semester.lastchange}
+            </Row>
+            <Row>
+                Témata:
+                <SubjectTopicsAttribute subject={topics}/>
             </Row>
         </>
     )

@@ -32,11 +32,22 @@ import {Row} from "react-bootstrap"
 const TopicMediumCard = ({topic}) =>
     <>
         <Row>
-            Jméno:{topic.name}
+            Název témata:
+            {topic.name}
         </Row>
         <Row>
-            Id:{topic.id}
+            Popis témata:
+            {topic.description}
         </Row>
+        <Row>
+            Id: 
+            {topic.id}
+        </Row>
+        <Row>
+            Poslední změna: 
+            {topic.lastchange}
+        </Row>
+
     </>
    
 export const SubjectTopicsAttribute = ({subject}) => {
@@ -60,6 +71,8 @@ query SubjectQueryRead($id: id, $where: TopicInputFilter, $skip: Int, $limit: In
         topics(skip: $skip, limit: $limit, where: $where) {
             __typename
             id
+            description
+            
         }
     }
 }
