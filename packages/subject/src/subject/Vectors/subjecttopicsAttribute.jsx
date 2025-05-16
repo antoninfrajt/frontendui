@@ -1,7 +1,7 @@
 import { createAsyncGraphQLAction, processVectorAttributeFromGraphQLResult } from "@hrbolek/uoisfrontend-gql-shared"
 import { InfiniteScroll } from "@hrbolek/uoisfrontend-shared"
 import { Map } from "react-bootstrap-icons"
-import {Row} from "react-bootstrap"
+import {Row, Card} from "react-bootstrap"
 
 /**
  * A component for displaying the `topics` attribute of an subject entity.
@@ -30,26 +30,21 @@ import {Row} from "react-bootstrap"
  * <SubjectTopicsAttribute subject={subjectEntity} />
  */
 const TopicMediumCard = ({topic}) =>
-    <>
-        <Row>
-            Název témata:
-            {topic.name}
-        </Row>
-        <Row>
-            Popis témata:
-            {topic.description}
-        </Row>
-        <Row>
-            Id: 
-            {topic.id}
-        </Row>
-        <Row>
-            Poslední změna: 
-            {topic.lastchange}
-        </Row>
+    (
+  <Card className="mb-3 shadow-sm">
+    <Card.Body>
+      <Card.Title>{topic.name}</Card.Title>
+      <Card.Subtitle className="mb-2 text-muted">ID: {topic.id}</Card.Subtitle>
+      <Card.Text>
+        {topic.description || "— Bez popisu —"}
+        <br />
+        <small>Posl. změna: {topic.lastchange}</small>
+      </Card.Text>
+    </Card.Body>
+  </Card>
+);
 
-    </>
-   
+
 export const SubjectTopicsAttribute = ({subject}) => {
     console.log(subject)
     const {topics} = subject
@@ -72,7 +67,7 @@ query SubjectQueryRead($id: id, $where: TopicInputFilter, $skip: Int, $limit: In
             __typename
             id
             description
-            
+
         }
     }
 }

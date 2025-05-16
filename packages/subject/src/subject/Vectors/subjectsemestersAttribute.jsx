@@ -1,7 +1,7 @@
 import { createAsyncGraphQLAction, processVectorAttributeFromGraphQLResult } from "@hrbolek/uoisfrontend-gql-shared"
 import { InfiniteScroll } from "@hrbolek/uoisfrontend-shared"
 import { Map } from "react-bootstrap-icons"
-import {Row,Col} from "react-bootstrap"
+import {Row,Col, Card} from "react-bootstrap"
 import { SubjectTopicsAttribute } from "./subjecttopicsAttribute"
 
 
@@ -34,26 +34,21 @@ import { SubjectTopicsAttribute } from "./subjecttopicsAttribute"
 const SemesterMediumCard = ({semester}) => {
     const topics = {topics:semester?.topics || []}
     return (
-        <> 
-            <Row>
-                Id: 
-                {semester.id}
-            </Row>
-            <Row>
-                Název: 
-                {semester.name}
-            </Row>
-            <Row>
-                Poslední změna: 
-                {semester.lastchange}
-            </Row>
-            <Row>
-                Témata:
-                <SubjectTopicsAttribute subject={topics}/>
-            </Row>
-        </>
-    )
-}
+    <Card className="mb-4 shadow-sm">
+      <Card.Body>
+        <Card.Title as="h5">{semester.name}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">
+          ID: {semester.id} &nbsp;|&nbsp; Posl. změna: {semester.lastchange}
+        </Card.Subtitle>
+
+        <div className="mt-3">
+          <h6>Témata</h6>
+          <SubjectTopicsAttribute subject={topics} />
+        </div>
+      </Card.Body>
+    </Card>
+  );
+};
 
 export const SubjectSemestersAttribute = ({subject}) => {
     console.log(subject)

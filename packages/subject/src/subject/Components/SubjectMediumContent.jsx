@@ -1,5 +1,5 @@
 import { LeftColumn, MiddleColumn } from "@hrbolek/uoisfrontend-shared"
-import { Row,Col } from "react-bootstrap"
+import { Row,Col,Card } from "react-bootstrap"
 
 /**
  * A component that displays medium-level content for an subject entity.
@@ -25,33 +25,36 @@ import { Row,Col } from "react-bootstrap"
  * </SubjectMediumContent>
  */
 
-export const SubjectMediumContent = ({subject, children}) => {
-    return (
-        <>
-            
-            <Row>
-                <Col>Název:</Col>
-                <Col>{subject?.name}</Col>
-            </Row>
-            <Row>
-                <Col>Anglický název:</Col>
-                <Col>{subject?.nameEn}</Col>
-            </Row>
-            <Row>
-                <Col>Popis předmětu:</Col>
-                <Col>{subject?.description}</Col>
-            </Row>
-            <Row>
-                <Col>ID:</Col>
-                <Col>{subject?.id}</Col>
-            </Row>
-            <Row>
-                <Col>Poslední změna:</Col>
-                <Col>{subject?.lastchange}</Col>
-            </Row>
-            {children}
+export const SubjectMediumContent = ({ subject, children }) => 
+  <Card className="mb-4 shadow-sm">
+    <Card.Body>
+      <Card.Title as="h5" className="mb-3">
+        Informace o předmětu
+      </Card.Title>
 
-        </>
-    )
-}
+      <Row className="mb-2">
+        <Col sm={4} className="fw-bold">Název:</Col>
+        <Col sm={8}>{subject?.name}</Col>
+      </Row>
+      <Row className="mb-2">
+        <Col sm={4} className="fw-bold">Anglický název:</Col>
+        <Col sm={8}>{subject?.nameEn || "— Bez popisu —"}</Col>
+      </Row>
+      <Row className="mb-2">
+        <Col sm={4} className="fw-bold">Popis:</Col>
+        <Col sm={8}>{subject?.description || "— Bez popisu —"}</Col>
+      </Row>
+      <Row className="mb-2">
+        <Col sm={4} className="fw-bold">ID:</Col>
+        <Col sm={8}>{subject?.id}</Col>
+      </Row>
+      <Row className="mb-2">
+            <Col sm={4} className="fw-bold">Poslední změna:</Col>
+            <Col sm={8}>{subject?.lastchange}</Col>
+      </Row>
+      
+
+      {children && <div className="mt-4">{children}</div>}
+    </Card.Body>
+  </Card>
 
