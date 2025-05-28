@@ -33,7 +33,7 @@ const TopicMediumCard = ({topic}) =>
     (
   <Card className="mb-3 shadow-sm">
     <Card.Body>
-      <Card.Title>{topic.name}</Card.Title>
+      <Card.Title><strong>{topic.name}</strong></Card.Title>
       <Card.Subtitle className="mb-2 text-muted">ID: {topic.id}</Card.Subtitle>
       <Card.Text>
         {topic.description || "— Bez popisu —"}

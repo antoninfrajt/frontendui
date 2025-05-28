@@ -42,7 +42,7 @@ const SemesterMediumCard = ({semester}) => {
         </Card.Subtitle>
 
         <div className="mt-3">
-          <h6>Témata</h6>
+          <h3><strong>Témata:</strong></h3> 
           <SubjectTopicsAttribute subject={topics} />
         </div>
       </Card.Body>
