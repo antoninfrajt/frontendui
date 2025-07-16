@@ -40,12 +40,7 @@ fragment SubjectLarge on SubjectGQLModel {
     id
     lastchange
     mandatory
-    topics {
-      __typename
-      id
-      order
-      name
-    }
+    order
   }
 }
 `, SubjectMediumFragment)

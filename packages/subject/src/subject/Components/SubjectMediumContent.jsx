@@ -1,6 +1,6 @@
 import { LeftColumn, MiddleColumn } from "@hrbolek/uoisfrontend-shared"
 import { Row,Col,Card } from "react-bootstrap"
-
+import { SubjectButton} from "./SubjectCUDButton"
 /**
  * A component that displays medium-level content for an subject entity.
  *
@@ -30,6 +30,14 @@ export const SubjectMediumContent = ({ subject, children }) =>
     <Card.Body>
       <Card.Title as="h5" className="mb-3">
         Informace o předmětu
+        
+        <SubjectButton
+         operation="C"
+        subject={{name: "Nový předmět"}} 
+        >
+        Upravit
+        </SubjectButton>
+
       </Card.Title>
 
       <Row className="mb-2">
@@ -52,6 +60,15 @@ export const SubjectMediumContent = ({ subject, children }) =>
             <Col sm={4} className="fw-bold">Poslední změna:</Col>
             <Col sm={8}>{subject?.lastchange}</Col>
       </Row>
+      <Row className="mb-2">
+            <Col sm={4} className="fw-bold">Semestry:</Col>
+      
+        {subject.semesters && subject.semesters.length > 0 && (
+  subject.semesters.map((semester) => (
+    <Col key={semester.id}>{semester.order}</Col>
+  ))
+)}
+            </Row>
       
 
       {children && <div className="mt-4">{children}</div>}

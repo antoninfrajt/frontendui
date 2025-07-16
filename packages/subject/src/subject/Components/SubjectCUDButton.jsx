@@ -1,8 +1,10 @@
 import { ButtonWithDialog, ErrorHandler, LoadingSpinner } from "@hrbolek/uoisfrontend-shared";
-// import { InsertSubjectButton } from "./CUDButtons/InsertSubjectButton";
-// import { UpdateSubjectButton } from "./CUDButtons/UpdateSubjectButton";
-// import { DeleteSubjectButton } from "./CUDButtons/DeleteSubjectButton";
+//import { InsertSubjectButton } from "./CUDButtons/InsertSubjectButton";
+//import { UpdateSubjectButton } from "./CUDButtons/UpdateSubjectButton";
+//import { DeleteSubjectButton } from "./CUDButtons/DeleteSubjectButton";
 import { useAsyncAction } from "@hrbolek/uoisfrontend-gql-shared";
+import { SubjectInsertAsyncAction, SubjectUpdateAsyncAction, SubjectDeleteAsyncAction } from "../Queries";
+import { SubjectMediumEditableContent } from "./SubjectMediumEditableContent";
 
 /**
  * SubjectCUDButton Component
@@ -71,8 +73,8 @@ export const SubjectButton = ({ operation, children, subject, onDone = () => {},
     const operationConfig = {
         C: {
             asyncAction: SubjectInsertAsyncAction,
-            dialogTitle: "Vložit novou subject",
-            loadingMsg: "Vkládám novou subject",
+            dialogTitle: "Vložit nový subjekt",
+            loadingMsg: "Vkládám nový subjekt",
             renderContent: () => <SubjectMediumEditableContent subject={subject} />,
         },
         U: {

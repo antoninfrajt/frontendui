@@ -33,9 +33,16 @@ import { SubjectTopicsAttribute } from "./subjecttopicsAttribute"
  */
 const SemesterMediumCard = ({semester}) => {
     const topics = {topics:semester?.topics || []}
-    return (
+    return (   
     <Card className="mb-4 shadow-sm">
       <Card.Body>
+        <button
+            type="button"
+            className="btn btn-secondary mt-3"
+            onClick={() => alert("Kill me.")}
+        >
+             Click me
+        </button>
         <Card.Title as="h5">{semester.name}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">
           ID: {semester.id} &nbsp;|&nbsp; Posl. změna: {semester.lastchange}
