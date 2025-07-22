@@ -5,5 +5,4 @@ export * from './SubjectLargeCard'
 export * from './SubjectLink'
 export * from './SubjectMediumContent'
 export * from './SubjectMediumCard'
-
 export * from './SubjectMediumEditableContent'

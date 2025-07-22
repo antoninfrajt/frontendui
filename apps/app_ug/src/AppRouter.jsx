@@ -10,6 +10,8 @@ import { AdmissionPage } from "../../../packages/admissions/src";
 import { RequestTypePage, RequestCategoriesPage, RequestCategoryPage, RequestDesignPage, RequestPage, RequestsPage, RequestCreatePage } from "../../../packages/requests/src";
 import { GroupCategoryEditPage } from "@hrbolek/uoisfrontend-ug/";
 import { GroupEditPage } from "@hrbolek/uoisfrontend-ug";
+import {SubjectPage} from "@SubjectPage";
+
 
 const prefix = "/ug"
 export const Routes = [
