@@ -75,7 +75,7 @@ export const SubjectButton = ({ operation, children, subject, onDone = () => {},
             asyncAction: SubjectInsertAsyncAction,
             dialogTitle: "Vložit nový subjekt",
             loadingMsg: "Vkládám nový subjekt",
-            renderContent: () => <SubjectMediumEditableContent subject={subject} />,
+            renderContent: () => <SubjectMediumEditableContent subject={subject} operation = "C" />,
         },
         U: {
             asyncAction: SubjectUpdateAsyncAction,

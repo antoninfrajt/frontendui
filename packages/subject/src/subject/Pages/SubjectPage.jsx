@@ -3,7 +3,7 @@ import { useParams } from "react-router"
 
 import { CreateDelayer, ErrorHandler, LoadingSpinner } from "@hrbolek/uoisfrontend-shared"
 import { useAsyncAction } from "@hrbolek/uoisfrontend-gql-shared"
-import { SubjectLargeCard } from "../Components"
+import {SubjectLargeCard, SubjectMediumContent} from "../Components"
 import { SubjectReadAsyncAction, SubjectReadPageAsyncAction } from "../Queries"
 import { SubjectPageNavbar } from "./SubjectPageNavbar"
 import { FetchAllSubjectsAsyncAction } from "../../Subject_for_del/Queries/FetchAllSubjectsAsyncAction"
@@ -41,8 +41,7 @@ const SubjectPageContent = ({subject}) => {
     return (<>
         <SubjectPageNavbar subject={subject} />
         <SubjectLargeCard subject={subject}>
-            <SubjectSemestersAttribute subject={semesters}>
-            </SubjectSemestersAttribute>
+
         </SubjectLargeCard>
     </>)
 }

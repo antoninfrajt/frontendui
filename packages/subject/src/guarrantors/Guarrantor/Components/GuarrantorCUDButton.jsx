@@ -3,11 +3,8 @@ import {ButtonWithDialog, ErrorHandler, LoadingSpinner} from "@hrbolek/uoisfront
 // import { UpdateProgramButton } from "./CUDButtons/UpdateProgramButton";
 // import { DeleteProgramButton } from "./CUDButtons/DeleteProgramButton";
 import { useAsyncAction } from "@hrbolek/uoisfrontend-gql-shared";
-import {SubjectInsertAsyncAction, SubjectUpdateAsyncAction, SubjectDeleteAsyncAction} from "../Queries";
-import {SubjectMediumEditableContent} from "./SubjectMediumEditableContent";
-import {RoleInsertAsyncAction} from "../Queries";
-import {GuarrantMediumEditableContent} from "./GuarrantMediumEditableContent";
-import {RoleDeleteAsyncAction} from "../Queries";
+import {GuarrantorInsertAsyncAction, GuarrantorDeleteAsyncAction} from "../Queries";
+import {GuarrantorMediumEditableContent} from "./GuarrantorMediumEditableContent";
 /**
  * GuarrantCUDButton
  *  
@@ -36,19 +33,19 @@ import {RoleDeleteAsyncAction} from "../Queries";
  *        Add Guarantor
  *     </GuarrantCUDButton>
  */
- export const GuarrantCUDButton = ({ operation, guarant, onDone = (guarant) => {}, children, ...props }) => { // Configuration for each operation type
+ export const GuarrantorButton = ({ operation, guarant, onDone = (guarant) => {}, children, ...props }) => { // Configuration for each operation type
     const operationConfig = {
         C: {
-            asyncAction: RoleInsertAsyncAction,
+            asyncAction: GuarrantorInsertAsyncAction,
             dialogTitle: "Přidat garanta",
             loadingMsg: "Vkládám nového garanta",
-            renderContent: () => <GuarrantMediumEditableContent guarant={guarant} operation = "C" />,
+            renderContent: () => <GuarrantorMediumEditableContent guarant={guarant} operation = "C" />,
         },
         D: {
-            asyncAction: RoleDeleteAsyncAction,
+            asyncAction: GuarrantorDeleteAsyncAction,
             dialogTitle: "Odebrat garanta",
             loadingMsg: "Odebírám garanta",
-            renderContent: () => <GuarrantMediumEditableContent guarant={guarant} operation = "D" />,
+            renderContent: () => <GuarrantorMediumEditableContent guarant={guarant} operation = "D" />,
         },
     };
     if (!operationConfig[operation]) {

@@ -1,10 +1,10 @@
 import {LeftColumn, MiddleColumn} from "@hrbolek/uoisfrontend-shared"
 import {Row, Col, Card} from "react-bootstrap"
-import {Check, PersonFill, Trash} from "react-bootstrap-icons";
+import {Check, FileLock, PencilFill, PersonFill, Table, Trash, Trash2} from "react-bootstrap-icons";
 import React, {useState, useEffect} from "react";
-import {GuarrantCUDButton} from "./GuarrantCUDButton";
-import {UserInputSearch} from "./UserInputSearch";
-
+import {GuarrantorButton} from "../../guarrantors/Guarrantor/Components/GuarrantorCUDButton";
+import {UserInputSearch} from "../../../../ug/src/Components/User/UserInputSearch";
+import {SemesterButton} from "../../semesters/Semester/Components/SemesterCUDButton";
 /**
  * A component that displays medium-level content for an subject entity.
  *
@@ -87,9 +87,31 @@ export const SubjectMediumContent = ({subject, children}) => {
             <Card.Body>
                 <Card.Title as="h5" className="mb-3">
                     Informace o předmětu
-                </Card.Title>
-                <div>
-                  <Row className="mb-2">
+       </Card.Title>
+        
+    <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "1rem" }}>
+    <SemesterButton
+        operation="C"
+        semester={subject}
+            style={{
+            background: "#198754",
+            color: "#fff",
+            border: "2px solid #22e48aff",
+            borderRadius: "3px",
+            padding: "0.3rem 0.7rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem",
+    }}
+        >
+        Přidat semestr
+        <PencilFill style={{ marginLeft: "6px", color: "#198754" }} />
+    </SemesterButton>
+    </div>
+        
+       
+    <div>
+      <Row className="mb-2">
         <Col sm={4} className="fw-bold">Název:</Col>
         <Col sm={8}>{subject?.name}</Col>
       </Row>
@@ -110,30 +132,65 @@ export const SubjectMediumContent = ({subject, children}) => {
             <Col sm={8}>{subject?.lastchange}</Col>
       </Row>
       <Row className="mb-2">
+        <Col sm={4} className="fw-bold">Datum vytvoření:</Col>
+        <Col sm={8}>{subject?.created}</Col>
+      </Row>
+      <Row className="mb-2">
             <Col sm={4} className="fw-bold">Semestry:</Col>
       </Row>
+
+      <Row className="mb-2">
         {subject.semesters && subject.semesters.length > 0 && (
   subject.semesters.map((semester) => (
-    <Col key={semester.id}>{semester.order}</Col>
-      ))
+    <Col key={semester.id}>
+      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+        <span>{semester.order}</span>
+        <SemesterButton
+          operation="D"
+          semester={semester}
+          style={{
+            background: "transparent",
+            color: "#cf1111ff",
+            border: "none",
+            borderRadius: "50%",
+            width: "35px",
+            height: "28px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            fontSize: "1.2rem",
+            transition: "background 0.2s",
+            padding: 3,
+          }}
+          className="semester-delete-btn"
+          title="Remove semester"
+        >
+          <Trash />
+        </SemesterButton>
+      </div>
+    </Col>
+  ))
 )}
-            </div>
-                <div>
-                    <h5>Garanti programu:</h5>
-                    {/* List of current guarantors */}
-                    {guarantors.length > 0 ? (
-                        guarantors.map((guarantor) => (
-                            <div key={guarantor.id} className="guarantor-item"
-                                 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                                {guarantor.roles && guarantor.roles.length > 0 ? (
-                                    guarantor.roles.map((role, idx) => (
-                                        <span key={idx} style={{ display: "flex", alignItems: "center", gap: "0.25rem" }}>
-                                    <PersonFill color="#0d6efd" style={{ marginRight: "0.25rem" }} />
-                                            {role.user?.name}
-                                            {role.user?.surname ?  `${role.user.surname}` : ""}
-                                            {/* Delete button for each guarantor role */}
+    </Row>
+    </div>
 
-                                                <GuarrantCUDButton
+    <div>
+        <h5>Garanti programu:</h5>
+        {/* List of current guarantors */}
+            {guarantors.length > 0 ? (
+            guarantors.map((guarantor) => (
+            <div key={guarantor.id} className="guarantor-item"
+             style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                {guarantor.roles && guarantor.roles.length > 0 ? (
+                    guarantor.roles.map((role, idx) => (
+                <span key={idx} style={{ display: "flex", alignItems: "center", gap: "0.25rem" }}>
+            <PersonFill color="#0d6efd" style={{ marginRight: "0.25rem" }} />
+                    {role.user?.name}
+                    {role.user?.surname ?  `${role.user.surname}` : ""}
+                {/* Delete button for each guarantor role */}
+
+                                                <GuarrantorButton
                                                     operation="D"
                                                     guarant={{
                                                         id: role.id,
@@ -144,7 +201,7 @@ export const SubjectMediumContent = ({subject, children}) => {
                                                     onDone={() => handleGuarantorDeleted(role)}
                                                     style={{
                                                         background: "transparent",
-                                                        color: "#dc3545",
+                                                        color: "#cf1111ff",
                                                         border: "none",
                                                         borderRadius: "50%",
                                                         width: "28px",
@@ -161,7 +218,7 @@ export const SubjectMediumContent = ({subject, children}) => {
                                                     title="Remove guarantor"
                                                 >
                                                     <Trash />
-                                                </GuarrantCUDButton>
+                                                </GuarrantorButton>
 
                                 </span>
                                     ))
@@ -182,7 +239,7 @@ export const SubjectMediumContent = ({subject, children}) => {
                                 onSelect={setSelectedGuarant}
                             />
                             {selectedGuarant && (
-                                <GuarrantCUDButton
+                                <GuarrantorButton
                                     operation="C"
                                     guarant={{
                                         userId: selectedGuarant.id,
@@ -197,7 +254,7 @@ export const SubjectMediumContent = ({subject, children}) => {
                                 >
                                     Přidat garanta
                                     <Check style={{ marginLeft: "0.5rem" }} />
-                                </GuarrantCUDButton>
+                                </GuarrantorButton>
                             )}
                         </>
 

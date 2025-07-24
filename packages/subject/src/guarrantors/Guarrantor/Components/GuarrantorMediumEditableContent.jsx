@@ -27,11 +27,11 @@ import { Input } from "@hrbolek/uoisfrontend-shared"
  */
 const uuid = () => crypto.randomUUID();
 
-export const GuarrantMediumEditableContent = ({
+export const GuarrantorMediumEditableContent = ({
                                                   guarant,
                                                   operation = "C", // "C" for create/insert, "D" for delete
-                                                  onChange = (e) => null,
-                                                  onBlur = (e) => null,
+                                                  onChange = (e)=>null,
+                                                  onBlur = (e)=>null,
                                                   children
                                               }) => {
     // Render confirmation for delete operation
@@ -39,7 +39,7 @@ export const GuarrantMediumEditableContent = ({
         return (
             <>
                 <div>
-                    Are you sure you want to remove this guarantor from the program?
+                    Chcete odebrat tohoto garanta?
                 </div>
                 <div style={{ margin: "1rem 0", fontWeight: "bold" }}>
                     {guarant?.name} {guarant?.surname}
@@ -52,7 +52,7 @@ export const GuarrantMediumEditableContent = ({
     return (
         <>
             <div>
-                Do you want to add this guarantor to the program?
+                Chcete přidat tohoto garanta?
             </div>
             <div style={{ margin: "1rem 0", fontWeight: "bold" }}>
                 {guarant?.name} {guarant?.surname}

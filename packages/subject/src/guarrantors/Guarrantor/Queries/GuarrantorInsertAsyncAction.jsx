@@ -1,8 +1,8 @@
 import { createAsyncGraphQLAction, createQueryStrLazy } from "@hrbolek/uoisfrontend-gql-shared";
 
-const RoleInsertMutation = createQueryStrLazy(
-    `
-mutation RoleInsertMutation($userId: UUID!, $groupId: UUID!, $roletypeId: UUID!) {
+const GuarrantorInsertMutation = createQueryStrLazy(
+`
+mutation GuarrantorInsertMutation($userId: UUID!, $groupId: UUID!, $roletypeId: UUID!) {
   result: roleInsert(
     role: {userId: $userId, groupId: $groupId, roletypeId: $roletypeId}
   ) {
@@ -19,7 +19,4 @@ mutation RoleInsertMutation($userId: UUID!, $groupId: UUID!, $roletypeId: UUID!)
 );
 
 
-export const RoleInsertAsyncAction = createAsyncGraphQLAction(RoleInsertMutation)
-
-
-
+export const GuarrantorInsertAsyncAction = createAsyncGraphQLAction(GuarrantorInsertMutation)

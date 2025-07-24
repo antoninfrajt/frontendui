@@ -34,11 +34,12 @@ export const SubjectLargeCard = ({subject, children}) => {
     return (
         <SubjectCardCapsule subject={subject} >
             <Row>
+                <SubjectMediumCard subject={subject}/>
                 <LeftColumn>
-                    <SubjectMediumCard subject={subject}/>
+
                 </LeftColumn>
                 <MiddleColumn>
-                    {children}
+
                 </MiddleColumn>
             </Row>
         </SubjectCardCapsule>
